@@ -1,0 +1,152 @@
+Step 1: VS Code open karo
+
+1. VS Code open karo.
+2. Upar File → Open Folder par click karo.
+3. Desktop par ek naya folder banao, naam rakho ML_Experiment7.
+4. Us folder ko select karke Select Folder par click karo.
+Step 2: Python extension install karo
+
+1. Left side Extensions icon par click karo.
+2. Search karo Python.
+3. Microsoft wali Python extension select karo.
+4. Install par click karo.
+Agar Python pehle se installed nahi hai, toh official Python website se Python install karo. Windows installation mein Add Python to PATH checkbox select karna.
+Step 3: Python file banao
+
+1. Left side Explorer mein ML_Experiment7 folder par jao.
+2. New File icon par click karo.
+3. File ka naam likho kmeans.py.
+4. Enter press karo.
+
+Step 4: Libraries install karo
+VS Code mein Terminal → New Terminal par click karo.
+Neeche terminal mein ye command paste karo:
+python -m pip install numpy pandas matplotlib scikit-learn
+
+
+Enter press karo aur installation complete hone do.
+
+Agar python command nahi chale, toh ye try karo:
+py -m pip install numpy pandas matplotlib scikit-learn
+
+
+Step 5: Ye code paste karo
+kmeans.py file mein neeche wala poora code paste karo.
+import numpy as npimport pandas as pdimport matplotlib.pyplot as pltfrom sklearn.cluster import KMeans# Sample datasetdata = {    'X': [1, 1.5, 3, 5, 3.5, 4.5, 3.5],    'Y': [1, 2, 4, 7, 5, 5, 4.5]}df = pd.DataFrame(data)# Apply K-Means clusteringkmeans = KMeans(    n_clusters=2,    random_state=42,    n_init=10)kmeans.fit(df)labels = kmeans.labels_# Plot clustersplt.scatter(df['X'], df['Y'], c=labels)plt.xlabel("X values")plt.ylabel("Y values")plt.title("K-Means Clustering")plt.show()
+
+
+
+Important: Ctrl + S press karke file save karna mat bhoolna.
+Step 6: Code run karo
+
+VS Code ke top-right mein ▶ Run Python File button par click karo.
+
+Agar button nahi dikhta:
+1. Terminal → New Terminal open karo.
+2. Ye command likho:
+python kmeans.py
+
+
+3. Enter press karo.
+Step 7: Output dekho
+
+Expected output
+- 7 data points
+- 2 clusters in different colors
+- X-axis and Y-axis labels
+- Title: K-Means Clustering
+Agar graph open ho gaya, toh tumhara experiment successfully run ho gaya.
+
+
+
+
+# Experiment No. 7
+
+## Title
+**Implementation of K-Means Clustering Using Python**
+
+### 1. Aim
+To implement the K-Means Clustering algorithm using Python and visualize the clusters using a scatter graph.
+
+### 2. System Requirements
+
+**Hardware Requirements:**
+- Processor: Intel Core i3 or equivalent
+- RAM: Minimum 4 GB
+- Hard Disk: Minimum 1 GB free space
+
+**Software Requirements:**
+- Operating System: Windows 10/11
+- Programming Language: Python
+- IDE: Visual Studio Code (VS Code)
+- Libraries: NumPy, Pandas, Matplotlib, Scikit-learn
+
+### 3. Theory
+K-Means Clustering is an unsupervised machine learning algorithm used to group similar data points into clusters. The letter K represents the number of clusters to be created. The algorithm assigns each data point to the nearest cluster center, called a centroid. It recalculates the centroids and repeats the process until the clusters become stable. K-Means is used in data mining, pattern recognition, and data analysis.
+
+### 4. Algorithm
+1. Start.
+2. Import the required Python libraries.
+3. Create a sample dataset containing X and Y values.
+4. Select the number of clusters, K = 2.
+5. Apply the K-Means Clustering algorithm to the dataset.
+6. Fit the model and obtain the cluster labels.
+7. Plot the clusters using Matplotlib.
+8. Display the scatter graph.
+9. Stop.
+
+### 5. Procedure
+1. Open Visual Studio Code.
+2. Create a Python file named `kmeans.py`.
+3. Install the required libraries using pip.
+4. Import NumPy, Pandas, Matplotlib, and KMeans.
+5. Create a sample dataset.
+6. Apply K-Means with two clusters.
+7. Execute the Python program.
+8. Observe the output graph showing two clusters.
+
+### 6. Program
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+# Sample dataset
+data = {
+    'X': [1, 1.5, 3, 5, 3.5, 4.5, 3.5],
+    'Y': [1, 2, 4, 7, 5, 5, 4.5]
+}
+
+df = pd.DataFrame(data)
+
+# Apply K-Means clustering
+kmeans = KMeans(
+    n_clusters=2,
+    random_state=42,
+    n_init=10
+)
+
+kmeans.fit(df)
+labels = kmeans.labels_
+
+# Plot clusters
+plt.scatter(df['X'], df['Y'], c=labels)
+plt.xlabel("X values")
+plt.ylabel("Y values")
+plt.title("K-Means Clustering")
+plt.show()
+```
+
+### 7. Output
+A scatter graph is displayed showing seven data points divided into two clusters using different colors.
+
+### 8. Explanation of Output
+- The X-axis represents X values.
+- The Y-axis represents Y values.
+- Each dot represents one data point.
+- Different colors represent the two clusters.
+- The algorithm groups similar data points based on distance.
+
+### 9. Conclusion
+The K-Means Clustering algorithm was successfully implemented using Python and Scikit-learn. The dataset was divided into two clusters based on the similarity and distance between data points. The clusters were visualized using a scatter graph with Matplotlib.
